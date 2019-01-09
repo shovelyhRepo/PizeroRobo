@@ -1,0 +1,15 @@
+<RCC>
+  <qresource prefix="png">
+    <file>res/ui/bg_1.png</file>
+    <file>res/ui/btn_ctrl_down.png</file>
+    <file>res/ui/btn_ctrl_down_1.png</file>
+    <file>res/ui/btn_ctrl_left.png</file>
+    <file>res/ui/btn_ctrl_left_1.png</file>
+    <file>res/ui/btn_ctrl_right.png</file>
+    <file>res/ui/btn_ctrl_right_1.png</file>
+    <file>res/ui/btn_ctrl_up.png</file>
+    <file>res/ui/btn_ctrl_up_1.png</file>
+    <file>res/ui/btn_idle.png</file>
+    <file>res/ui/btn_press.png</file>
+  </qresource>
+</RCC>

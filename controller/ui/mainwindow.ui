@@ -20,10 +20,10 @@
    <widget class="QLabel" name="lbl_camerea">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>0</y>
-      <width>640</width>
-      <height>480</height>
+      <x>250</x>
+      <y>10</y>
+      <width>320</width>
+      <height>240</height>
      </rect>
     </property>
     <property name="layoutDirection">
@@ -36,8 +36,308 @@
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
     </property>
    </widget>
+   <widget class="QPushButton" name="btn_ctrl_left">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>280</y>
+      <width>96</width>
+      <height>74</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+QWidget::enabled{
+	background:url(:/png/res/ui/btn_ctrl_left.png);
+
+	border-style:outer;
+}
+QWidget::checked{
+	background:url(:/png/res/ui/btn_ctrl_left_1.png);
+	border-style:outer;
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_ctrl_right">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>280</y>
+      <width>96</width>
+      <height>74</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+QWidget::enabled{
+	background:url(:/png/res/ui/btn_ctrl_right.png);
+
+	border-style:outer;
+}
+QWidget::checked{
+	background:url(:/png/res/ui/btn_ctrl_right_1.png);
+	border-style:outer;
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_ctrl_down">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>350</y>
+      <width>74</width>
+      <height>96</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+QWidget::enabled{
+	background:url(:/png/res/ui/btn_ctrl_down.png);
+
+	border-style:outer;
+}
+QWidget::checked{
+	background:url(:/png/res/ui/btn_ctrl_down_1.png);
+	border-style:outer;
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_bg">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>800</width>
+      <height>480</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/png/res/ui/bg_1.png);
+background-position:center;
+background-repeat:norepeat;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_ctrl_up">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>190</y>
+      <width>74</width>
+      <height>96</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget::enabled{
+	background:url(:/png/res/ui/btn_ctrl_up.png);
+
+	border-style:outer;
+}
+QWidget::checked{
+	background:url(:/png/res/ui/btn_ctrl_up_1.png);
+	border-style:outer;
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>false</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_config">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>20</y>
+      <width>74</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>NanumBarunGothic</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget::enabled{
+	background:url(:/png/res/ui/btn_idle.png);
+	border-style:outer;
+}
+QWidget::checked{
+	background:url(:/png/res/ui/btn_press.png);
+	border-style:outer;
+}
+
+QPushButton
+{
+   color:white;
+}
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>Config</string>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_stop">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>380</y>
+      <width>75</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>NanumBarunGothic</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget::enabled{
+	background:url(:/png/res/ui/btn_idle.png);
+	border-style:outer;
+}
+QWidget::checked{
+	background:url(:/png/res/ui/btn_press.png);
+	border-style:outer;
+}
+
+QPushButton
+{
+   color:white;
+}
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>Stop</string>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_shot">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>380</y>
+      <width>75</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>NanumBarunGothic</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget::enabled{
+	background:url(:/png/res/ui/btn_idle.png);
+	border-style:outer;
+}
+QWidget::checked{
+	background:url(:/png/res/ui/btn_press.png);
+	border-style:outer;
+}
+
+QPushButton
+{
+   color:white;
+}
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>Shot</string>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QFrame" name="content_frame">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>800</width>
+      <height>480</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <zorder>lbl_bg</zorder>
+   <zorder>btn_ctrl_left</zorder>
+   <zorder>btn_ctrl_down</zorder>
+   <zorder>btn_ctrl_right</zorder>
+   <zorder>lbl_camerea</zorder>
+   <zorder>btn_ctrl_up</zorder>
+   <zorder>btn_config</zorder>
+   <zorder>btn_stop</zorder>
+   <zorder>btn_shot</zorder>
+   <zorder>content_frame</zorder>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

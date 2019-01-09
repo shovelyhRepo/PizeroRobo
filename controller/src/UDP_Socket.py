@@ -3,11 +3,10 @@ import socket
 import json, sys
 
 class UDP_Socket:
-    HEADER = 'RPZero_RobotCar_Control,1.0'
     _socket = None
     __port = 0
     server_address = '172.16.255.1'
-    #server_address = '127.0.0.1'
+    #server_address = '192.168.0.108'
 
     __instance = None
 
@@ -28,16 +27,5 @@ class UDP_Socket:
 
     def send_data(self, data):
         self._socket.sendto(data.encode('utf-8'), (self.server_address, self.__port))
-def movecar(socket, direction):
-    datas = []
-
-    datas.append(direction)
-    dict_data = {}
-    dict_data['header'] = UDP_Socket.HEADER
-    dict_data['protocol'] = 'move'
-    dict_data['datas'] = datas
-
-    json_val = json.dumps(dict_data)
-    socket.send_data(json_val)
 
 NetworkManager = UDP_Socket.instance()

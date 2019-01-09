@@ -102,7 +102,7 @@ class Func_Drive:
         self.drive_thread.start()
 
     def command_drive(self, cmd):
-        self.drive_thread.excute_drive(cmd, 300)
+        self.drive_thread.excute_drive(cmd, 150)
 
 
 DriveManager = Func_Drive.instance()

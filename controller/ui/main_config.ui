@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Main_Config</class>
+ <widget class="QFrame" name="Main_Config">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background:rgba(60, 60, 60, 200);</string>
+  </property>
+  <widget class="QFrame" name="frame_config">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>16</y>
+     <width>600</width>
+     <height>450</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgba(40, 40, 40, 200);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="lbl_popup_uptitle">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>640</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>NanumBarunGothic</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgba(180, 200, 220, 200);
+</string>
+    </property>
+    <property name="text">
+     <string>Config</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_popup_close">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>0</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>NanumBarunGothic</family>
+      <pointsize>24</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget::enabled{
+	background:rgba(200, 0, 0, 200);
+	border-style:outer;
+}
+QWidget::checked{
+
+	background:rgba(255, 108, 110, 200);
+	border-style:outer;
+}
+
+QPushButton
+{
+   color:white;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>X</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget_config_robotip" native="true">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>80</y>
+      <width>571</width>
+      <height>80</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget_config_robot_ms" native="true">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>180</y>
+      <width>571</width>
+      <height>80</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
