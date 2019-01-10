@@ -1,5 +1,6 @@
 import os, sys, platform
 
+from ui.main_config_worker import Main_Config_Worker
 from ui.mainwindow import Main_Window
 from PyQt5 import QtCore
 from PyQt5.QtGui import QCursor
@@ -8,11 +9,15 @@ from ui.mainwindow_worker import Main_Window_Worker
 
 if __name__ == "__main__":
 
-
     app = QApplication(sys.argv)
 
-    myWindow = Main_Window(Main_Window_Worker)
-    myWindow.resize(myWindow.width(), myWindow.height())
+    myWindow = Main_Window()
+    myWindow.resize(800, 480)
+
+    #add worker
+    myWindow.add_worker(Main_Window_Worker)
+    myWindow.add_worker(Main_Config_Worker)
+
     if platform.system() == "Windows":
         QApplication.setOverrideCursor(QCursor(QtCore.Qt.ArrowCursor))
         myWindow.show()

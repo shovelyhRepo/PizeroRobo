@@ -1,9 +1,10 @@
 # _*_ coding: utf-8 _*_
 
 from PyQt5.QtWidgets import QFrame
+
+from src.Command_Worker import CommandManager
+from src.Defines.Command_Type import Command_Type
 from ui.main_config_design import Ui_Main_Config
-
-
 
 class Main_Config(QFrame, Ui_Main_Config):
 
@@ -24,11 +25,9 @@ class Main_Config(QFrame, Ui_Main_Config):
         self.btn_popup_close.setChecked(True)
 
     def on_click_close_released(self):
+        self.btn_popup_close.setChecked(False)
 
         try:
-            self.btn_popup_close.setChecked(False)
-
-            if self.isVisible() == True:
-                self.setVisible(False)
+            CommandManager.put_command(Command_Type.CMD_CLOSE_UI_CONFIG)
         except Exception as e:
             print(e)

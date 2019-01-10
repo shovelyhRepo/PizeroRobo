@@ -1,15 +1,19 @@
 # _*_ coding: utf-8 _*_
+import os
+import platform
 import threading
 import time
 import urllib.request
 
-from PyQt5.QtGui import QPixmap, QIcon
-from PyQt5.QtWidgets import QMainWindow, QFrame, QApplication
+from PyQt5.QtCore import *
+from PyQt5.QtGui import QPixmap
+from PyQt5.QtWidgets import QMainWindow
 from src.Command_Worker import CommandManager
 from src.Defines.Command_Type import Command_Type
 from src.UDP_Protocols import ProcotcolManager
 from ui.main_config import Main_Config
 from ui.mainwindow_design import Ui_MainWindow
+
 
 class CameraStreamWorker(threading.Thread):
 
@@ -50,7 +54,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
         (":/png/res/ui/btn_ctrl_right.png", ":/png/res/ui/btn_ctrl_right_1.png"),
     ]
 
-    def __init__(self, worker_cls):
+    def __init__(self):
         QMainWindow.__init__(self)
 
         self.setupUi(self)
@@ -59,6 +63,8 @@ class Main_Window(QMainWindow, Ui_MainWindow):
 
         CommandManager.init(self)
         CommandManager.start_worker()
+
+    def add_worker(self, worker_cls):
         self.mainwindow_worker = worker_cls(self)
 
     def __del__(self):
@@ -118,9 +124,7 @@ class Main_Window(QMainWindow, Ui_MainWindow):
 
     def on_clicked_config_released(self):
         self.btn_config.setChecked(False)
-        CommandManager.put_command(Command_Type.CMD_OPEN_UI)
-
-
+        CommandManager.put_command(Command_Type.CMD_OPEN_UI_CONFIG)
 
     def on_clicked_ctrl_up_pressed(self):
         self.btn_ctrl_up.setChecked(True)
@@ -151,27 +155,30 @@ class Main_Window(QMainWindow, Ui_MainWindow):
         ProcotcolManager.movecar('right')
 
     def keyPressEvent(self, event):
-        nowtime = int(round(time.time() * 1000))
 
-        if nowtime - self.pressedTime > 100:
-            self.pressedTime = nowtime
+        try:
 
-            press_key = chr(event.key())
-            '''
-            if press_key == 'W':
-                self.movecar('front')
-            elif press_key == 'S':
-                self.movecar('back')
-            elif press_key == 'A':
-                self.movecar('left')
-            elif press_key == 'D':
-                self.movecar('right')
-            elif press_key == 'Z':
-                self.movecar('stop')
-            elif press_key == 'Q':
-                sys.exit()
-            '''
+            MASK_KEY = Qt.CTRL
 
+            keyname = ''
+            press_key = event.key()
+            modifiers = int(event.modifiers())
+            if (modifiers and modifiers & MASK_KEY == modifiers and
+                    press_key > 0 and press_key != Qt.Key_Shift and press_key != Qt.Key_Alt and
+                    press_key != Qt.Key_Control and press_key != Qt.Key_Meta):
+
+                if press_key == Qt.Key_Q:
+                    if platform.system() != "Windows":
+                        os.system('sudo pkill -9 -ef app.py')
+                #keyname = QKeySequence(modifiers + press_key).toString()
+
+
+
+                #print('event.text(): %r' % event.text())
+                #print('event.key(): %d, %#x, %s' % (press_key, press_key, keyname))
+
+        except Exception as e:
+            print(e)
 
     def init_ui(self):
 
